@@ -51,16 +51,26 @@ import Link from 'next/link';
 
 const HomeCoverSection = ({heading='Hi I am Saurabh,' , message='I cook as a creative outlet to have outside of my 9-to-5.' }) => {
   return (
-    <div className='flex items-center justify-center min-h-screen mb-12 w-full bg-fixed bg-transparent bg-center bg-cover bg-blend-overlay bg-black/50 custom-img'>
+    // <div className='flex relative items-center justify-center min-h-screen mb-12 w-full bg-transparent bg-center bg-cover bg-blend-overlay bg-black/50 custom-img'>
+    <div className='flex bg-center bg-cover relative h-screen w-full custom-img'>
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center p-5 text-white">
+      <h2 className='text-5xl font-bold'>{heading}</h2>
+        <p className='py-5 text-xl'>{message}</p>
+        <Link href="/categories/all">
+          <button className='px-8 py-2 border'>Check it out</button>
+        </Link>
+    </div>
       {/* Overlay */}
       {/* <div className='absolute top-20 left-0 right-0 bottom-0 bg-black/70 z-[2]' /> */}
-      <div className='p-5 text-white z-[2] mt-[-10rem]'>
+      {/* <div className='p-5 text-white z-[2] mt-[-10rem]'>
         <h2 className='text-5xl font-bold'>{heading}</h2>
         <p className='py-5 text-xl'>{message}</p>
         <Link href="/categories/all">
           <button className='px-8 py-2 border'>Check it out</button>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
